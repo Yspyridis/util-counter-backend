@@ -3,7 +3,10 @@ const cors = require('cors');
 const app = express();
 const port = 3000;
 
-// app.use(cors()); // Enable CORS for all routes
+// Enable CORS for the frontend domain (https://util-counter-three.vercel.app)
+app.use(cors({
+    origin: 'https://util-counter-three.vercel.app'
+  }));
 
 // In-memory storage for the counter value
 let count = 0;
